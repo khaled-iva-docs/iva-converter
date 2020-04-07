@@ -1,0 +1,29 @@
+{
+  "name": "iva-converter",
+  "version": "1.1.0",
+  "description": "Word to PDF converter through Iva-docs",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "prepublish": "tsc"
+  },
+  "keywords": [
+    "Libreoffice",
+    "convert",
+    "Word",
+    "doc",
+    "docx",
+    "pdf",
+    "Word document",
+    "Microsoft Word",
+    "Word to PDF"
+  ],
+  "author": "Khaled Romdhane <khaled@iva-docs.com>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.19.2"
+  },
+  "devDependencies": {
+    "@types/node": "^13.11.0"
+  }
+}
