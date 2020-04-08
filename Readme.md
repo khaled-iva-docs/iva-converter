@@ -14,11 +14,14 @@ You'll need to create an API key in the API section of the website after you cre
 ## Usage example
 
 ```javascript
-const { docxToPdfFromPath } = require("iva-converter");
+const { docxToPdfFromPath, initIva } = require("iva-converter");
 const { writeFileSync } = require("fs");
 const { basename } = require("path");
 
-const filePath = "/path/to/file";
+// GET YOUR API KEY AT https://app.iva-docs.com/auth/register
+initIva("YOUR_API_KEY");
+
+const filePath = "./BUZCorinne___AHH1081__infomanquante.docx";
 // Returns a Promise
 // can be used with Async/Await
 docxToPdfFromPath(filePath)

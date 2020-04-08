@@ -1,6 +1,6 @@
 {
   "name": "iva-converter",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Word to PDF converter through Iva-docs",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
