@@ -21,7 +21,7 @@ const { basename } = require("path");
 // GET YOUR API KEY AT https://app.iva-docs.com/auth/register
 initIva("YOUR_API_KEY");
 
-const filePath = "./BUZCorinne___AHH1081__infomanquante.docx";
+const filePath = "/path/to/file";
 // Returns a Promise
 // can be used with Async/Await
 docxToPdfFromPath(filePath)
