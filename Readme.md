@@ -31,7 +31,9 @@ docxToPdfFromPath(filePath)
   .catch((err) => {
     // err will be the status code of the error in the remote server.
     // We recommend having a retry logic in case you encounter a Too Many Requests (429) error code
-    if (err === 429) {
+    // Also another interesting case is the timeout code (408) we have a default timeout at 20 seconds.
+    // Let us know if your request timeout often we help debug
+    if (err === 429 || err === 408) {
       // Retry logic
     }
   });
