@@ -23,6 +23,12 @@ export async function docxToPdfFromBase64(
   base64: string
 ): Promise<any> {
   try {
+    if (API_KEY === "NO_KEY_YET") {
+      console.error(
+        "Iva is not properly set up, please provide an API Key (https://app.iva-docs.com/api)"
+      );
+      throw 401;
+    }
     const res = await Axios.post(
       "https://converter.iva-docs.com/api/v1/to-pdf/from-base64",
       {
