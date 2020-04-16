@@ -4,7 +4,7 @@
 
 High quality docx to PDF conversion one remote iva-docs servers. Generate up to 1000 Documents a month for free.
 For more information checkout the official website
-https://iva-docs.com
+https://www.iva-docs.com
 
 ## Registration
 
@@ -38,6 +38,11 @@ docxToPdfFromPath(filePath)
     }
   });
 ```
+
+## I can't use the package
+
+We expose a public rest API available here:
+https://documenter.getpostman.com/view/11039305/SzYgRvVW?version=latest
 
 ## Any issue
 
