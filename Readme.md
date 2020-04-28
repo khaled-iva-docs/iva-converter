@@ -11,7 +11,7 @@ https://www.iva-docs.com
 Create an account at https://app.iva-docs.com/auth/register
 You'll need to create an API key in the API section of the website after you create your account.
 
-## Usage example
+## Usage example Node.js
 
 ```javascript
 const { docxToPdfFromPath, initIva } = require("iva-converter");
@@ -37,6 +37,27 @@ docxToPdfFromPath(filePath)
       // Retry logic
     }
   });
+```
+
+## Usage example in your front end application
+
+```javascript
+// ES6 Module
+import { initIva, convertDocxToPDFFromFile } from "iva-converter";
+// Use file saver to download the file
+import FileSaver from "file-saver";
+
+export async function convertDocxToPDF(
+  file: any,
+  fileName: string
+): Promise<any> {
+  // GET YOUR API KEY AT https://app.iva-docs.com/auth/register
+  initIva("YOUR_API_KEY");
+  // This function returns a Promise that resolved a blob
+  const data = await convertDocxToPDFFromFile(file);
+  // File saver is a library that starts a download with data in blob format
+  await FileSaver.saveAs(data, fileName);
+}
 ```
 
 ## I can't use the package
