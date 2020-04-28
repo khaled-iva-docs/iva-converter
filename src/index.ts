@@ -50,3 +50,33 @@ export async function docxToPdfFromBase64(
     throw err;
   }
 }
+
+export async function convertDocxToPDFFromFile(file: any): Promise<Blob> {
+  try {
+    if (API_KEY === "NO_KEY_YET") {
+      console.error(
+        "Iva is not properly set up, please provide an API Key (https://app.iva-docs.com/api)"
+      );
+      throw 401;
+    }
+    // @ts-ignore
+    const formData = new FormData();
+    formData.append("file", file);
+    const res = await Axios.post(
+      "https://converter.iva-docs.com/api/v1/to-pdf/from-file",
+      formData,
+      {
+        headers: {
+          authorization: `Bearer ${API_KEY}`,
+        },
+        responseType: "blob",
+      }
+    );
+    return res.data;
+  } catch (err) {
+    if (err && err.response && err.response.status) {
+      throw err.response.status;
+    }
+    throw err;
+  }
+}
