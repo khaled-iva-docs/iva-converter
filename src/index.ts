@@ -13,7 +13,9 @@ export async function docxToPdfFromPath(
 ): Promise<any> {
   const file = readFileSync(path);
   return await docxToPdfFromBase64(
-    typeof fileName === "string" ? fileName : basename(path),
+    typeof fileName === "string"
+      ? fileName
+      : basename(path).concat(path.indexOf(".docx") === -1 ? ".docx" : ""),
     file.toString("base64")
   );
 }
